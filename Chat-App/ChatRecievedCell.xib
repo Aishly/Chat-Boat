@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatRecievedCell" rowHeight="78" id="KGk-i7-Jjw" customClass="ChatRecievedCell" customModule="Chat_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="78"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="77.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jry-Jp-ydf">
+                        <rect key="frame" x="5" y="5" width="215" height="67.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PO1-Va-zNP">
+                                <rect key="frame" x="10" y="5" width="24" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="oqT-YX-mdY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="10"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DiG-wO-ywc" customClass="DesignableView" customModule="Chat_App" customModuleProvider="target">
+                                <rect key="frame" x="10" y="31" width="195" height="31.5"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="asdshjaj jgsadjh jhgsadjh adgsjGSAJ GASDJ HJDSG SJHA D GJGSDG DSHC DJSGJGD DWIUQUIHHQWU H HDQHHDS HKDS " translatesAutoresizingMaskIntoConstraints="NO" id="s53-gs-Ufh">
+                                        <rect key="frame" x="10" y="5" width="180" height="21.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="1" green="0.79215686269999996" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="s53-gs-Ufh" secondAttribute="trailing" constant="5" id="2Je-h0-85b"/>
+                                    <constraint firstItem="s53-gs-Ufh" firstAttribute="leading" secondItem="DiG-wO-ywc" secondAttribute="leading" constant="10" id="Jb2-U1-Edi"/>
+                                    <constraint firstItem="s53-gs-Ufh" firstAttribute="top" secondItem="DiG-wO-ywc" secondAttribute="top" constant="5" id="O3j-ZS-gD5"/>
+                                    <constraint firstAttribute="bottom" secondItem="s53-gs-Ufh" secondAttribute="bottom" constant="5" id="ntT-dA-DfM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkd-dG-mO1">
+                                <rect key="frame" x="54" y="9" width="18.5" height="13.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13.5" id="YPP-lt-PGA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="10"/>
+                                <color key="textColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DiG-wO-ywc" firstAttribute="leading" secondItem="jry-Jp-ydf" secondAttribute="leading" constant="10" id="2EH-b2-oId"/>
+                            <constraint firstAttribute="bottom" secondItem="DiG-wO-ywc" secondAttribute="bottom" constant="5" id="Deo-fB-FB6"/>
+                            <constraint firstItem="PO1-Va-zNP" firstAttribute="leading" secondItem="DiG-wO-ywc" secondAttribute="leading" id="Fpk-Wv-JFr"/>
+                            <constraint firstItem="xkd-dG-mO1" firstAttribute="leading" secondItem="PO1-Va-zNP" secondAttribute="trailing" constant="20" id="HxE-62-FTa"/>
+                            <constraint firstItem="PO1-Va-zNP" firstAttribute="top" secondItem="jry-Jp-ydf" secondAttribute="top" constant="5" id="eOf-xU-1VH"/>
+                            <constraint firstItem="DiG-wO-ywc" firstAttribute="top" secondItem="PO1-Va-zNP" secondAttribute="bottom" constant="5" id="rbs-1x-VoQ"/>
+                            <constraint firstAttribute="trailing" secondItem="DiG-wO-ywc" secondAttribute="trailing" constant="10" id="smF-UQ-Bc9"/>
+                            <constraint firstItem="xkd-dG-mO1" firstAttribute="centerY" secondItem="PO1-Va-zNP" secondAttribute="centerY" id="zxj-4Z-rFq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="jry-Jp-ydf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="AgC-KS-gWW"/>
+                    <constraint firstAttribute="trailing" secondItem="jry-Jp-ydf" secondAttribute="trailing" constant="100" id="fVb-tc-w3i"/>
+                    <constraint firstItem="jry-Jp-ydf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="kdZ-b6-lKX"/>
+                    <constraint firstAttribute="bottom" secondItem="jry-Jp-ydf" secondAttribute="bottom" constant="5" id="zrs-Kf-l98"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cardView" destination="jry-Jp-ydf" id="INy-xo-deO"/>
+                <outlet property="messageLB" destination="s53-gs-Ufh" id="iKF-y4-dGd"/>
+                <outlet property="personNameLB" destination="PO1-Va-zNP" id="JUP-rd-q7g"/>
+                <outlet property="timeLB" destination="xkd-dG-mO1" id="0Ae-fY-MbW"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="71"/>
+        </tableViewCell>
+    </objects>
+</document>
