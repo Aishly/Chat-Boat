@@ -26,12 +26,9 @@ class ChatSentCell: UITableViewCell {
     }
     
     func setupCell(chat: Chat) {
-        cardView.layer.cornerRadius = 5
-        cardView.clipsToBounds = true
         messageLB.text = chat.message
         timeLB.text = chat.sentOn
         userName.text = chat.fromName
-        
     }
 
 }

@@ -176,16 +176,17 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let chat = chatArr[indexPath.row]
-        
-        switch chat.chatCellType {
-            case .recieved:
-            return UITableViewAutomaticDimension
-        case .sent:
-            return UITableViewAutomaticDimension
-        case .none:
-            return 10
-        }
+//        let chat = chatArr[indexPath.row]
+//
+//        switch chat.chatCellType {
+//            case .recieved:
+//            return UITableViewAutomaticDimension
+//        case .sent:
+//            return UITableViewAutomaticDimension
+//        case .none:
+//            return 10
+//        }
+        return UITableViewAutomaticDimension
     }
 }
 

@@ -28,8 +28,8 @@ class ChatRecievedCell: UITableViewCell {
     }
     
     func setupCell(chat: Chat) {
-        cardView.layer.cornerRadius = 5
-        cardView.clipsToBounds = true
+//        cardView.layer.cornerRadius = 5
+//        cardView.clipsToBounds = true
         
         personNameLB.text = chat.fromName
         messageLB.text = chat.message
