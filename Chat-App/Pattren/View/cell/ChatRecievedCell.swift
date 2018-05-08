@@ -8,29 +8,27 @@
 
 import UIKit
 
+///======chat from other side
 class ChatRecievedCell: UITableViewCell {
     
     @IBOutlet weak var cardView: UIView!
-//    @IBOutlet weak var messageLB: UILabel!
-     @IBOutlet weak var messageLB: UITextView!
+    @IBOutlet weak var messageLB: UITextView!
     @IBOutlet weak var timeLB: UILabel!
     @IBOutlet weak var personNameLB: UILabel!
     
+//
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
+//
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//    }
+//
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-    
-    func setupCell(chat: Chat) {
-//        cardView.layer.cornerRadius = 5
-//        cardView.clipsToBounds = true
-        
+    //----- display receive data on cell
+    func dispalyChatDetails(chat: Chat) {
         personNameLB.text = chat.fromName
         messageLB.text = chat.message
         timeLB.text  = chat.recievedOn

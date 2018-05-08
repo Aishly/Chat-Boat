@@ -17,8 +17,6 @@ class ViewController: UIViewController , UITextFieldDelegate {
     
     var chatArr: [Chat] = []
     
-//    var oldChatArray:NSArray!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         messageTF.delegate = self
@@ -26,9 +24,9 @@ class ViewController: UIViewController , UITextFieldDelegate {
         self.chatTV.register(UINib(nibName: "ChatSentCell", bundle: nil), forCellReuseIdentifier: "ChatSentCell")
          self.chatTV.register(UINib(nibName: "ChatNoneCell", bundle: nil), forCellReuseIdentifier: "ChatNoneCell")
         
-        chatArr = Chat().dummyData()
+        //if want to show predeind chat
+            chatArr = Chat().dummyData()
             chatTV.scrollToBottom()
-        call_Chat()
     }
 
     override func didReceiveMemoryWarning() {
@@ -150,21 +148,21 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-//        self.chatArr = self.chatArr.sorted(by: { $0.msgId > $1.msgId })
         let chat = chatArr[indexPath.row]
+        
         switch chat.chatCellType {
         case .recieved:
             guard let cell = chatTV.dequeueReusableCell(withIdentifier: "ChatRecievedCell") as? ChatRecievedCell else {
                 return UITableViewCell()
             }
-            cell.setupCell(chat: chat)
+            cell.dispalyChatDetails(chat: chat)
             return cell
             
         case .sent:
             guard let cell = chatTV.dequeueReusableCell(withIdentifier: "ChatSentCell") as? ChatSentCell else {
                 return UITableViewCell()
             }
-            cell.setupCell(chat: chat)
+            cell.dispalyChatDetails(chat: chat)
             return cell
         case .none:
             guard let cell = chatTV.dequeueReusableCell(withIdentifier: "ChatNoneCell") as? ChatNoneCell else {
@@ -176,16 +174,6 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let chat = chatArr[indexPath.row]
-//
-//        switch chat.chatCellType {
-//            case .recieved:
-//            return UITableViewAutomaticDimension
-//        case .sent:
-//            return UITableViewAutomaticDimension
-//        case .none:
-//            return 10
-//        }
         return UITableViewAutomaticDimension
     }
 }
@@ -200,104 +188,3 @@ extension ViewController: UITextViewDelegate {
     }
 }
 
-
-
-import UIKit
-
-extension UITableView {
-    func scrollToBottom(animated: Bool = true) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-            let section = self.numberOfSections
-            if section > 0 {
-                let row = self.numberOfRows(inSection: section - 1)
-                if row > 0 {
-                    self.scrollToRow(at: IndexPath(row: row - 1, section: section - 1), at: .bottom, animated: animated)
-                }
-            }
-        })
-    }
-}
-
-extension String {
-
-    var trim: String {
-    return self.trimmingCharacters(in: CharacterSet.whitespaces)
-    }
-}
-
-
-
-extension ViewController{
-    func call_Chat(){
-       
-//        activityIndicator.show(animated: true)
-//
-//        let parameters:[String:Any] = ["ToUserID":" 1d5fdf51c9fcfe6eb4326461782f6032" ,
-//                                       "page":"1"]
-//
-//        HttpClientApi.instance().makeAPICall(url:  PINGAPI.baseURL, params: parameters, header: nil, method: .POST, success: { (data, response, error) in
-//            do{
-//                if let data = data , let json = try JSONSerialization.jsonObject(with: data) as? NSDictionary{
-//                    DispatchQueue.main.async (execute:{
-//                        if let success = json.value(forKey: "success") as? Bool , success == true{
-//
-//                            print(json.value(forKey: "messages") as! NSArray)
-//
-//                    self.oldChatArray = json.value(forKey: "messages") as! NSArray
-//
-//                    for i in 0..<self.oldChatArray.count{
-//
-//                        let oldChat = self.oldChatArray![i] as! NSDictionary
-//
-//                        if (oldChat.value(forKey: "FromUserID") as! Int) == 1{
-//                            self.chatArr.append(Chat(
-//
-//                                msgId: oldChat.value(forKey: "MsID") as! Int,
-//                                id: oldChat.value(forKey: "FromUserID") as! Int,
-//                                 fromName: (oldChat.value(forKey: "fullName") as? String) ?? "no name",
-//                                 message: oldChat.value(forKey: "MsBody") as! String,
-//                                 recievedOn: nil,
-//                                 deliveredOn: nil,
-//                                 sentOn: oldChat.value(forKey: "MsDate") as? String,
-//                                 readOn: nil,
-//                                 chatCellType: .sent))
-//                        }
-//                        else{
-//                            self.chatArr.append(Chat(
-//
-//                            msgId: oldChat.value(forKey: "MsID") as! Int,
-//                            id: oldChat.value(forKey: "FromUserID") as! Int,
-//                             fromName: (oldChat.value(forKey: "fullName") as? String) ?? "no name",
-//                             message: oldChat.value(forKey: "MsBody") as! String,
-//                             recievedOn: nil,
-//                             deliveredOn: nil,
-//                             sentOn: oldChat.value(forKey: "MsDate") as? String,
-//                             readOn: nil,
-//                             chatCellType: .recieved))
-//                        }
-//
-//
-//                    }
-////                            sorted(by: { $0.fileID > $1.fileID })
-//
-////                            self.chatArr =  Array(NSOrderedSet(array: self.chatArr)) as! [Chat]
-//                            print(self.chatArr)
-////                            self.chatTV.reloadData()
-////                            self.chatTV.scrollToBottom()
-//                        }else{
-//                        }
-//                    })
-//                }
-//            }
-//            catch{
-//                DispatchQueue.main.async (execute:{
-//                })
-//            }
-//        }, failure: {(data, response, error) in
-//            DispatchQueue.main.async (execute:{
-//
-//            })
-//        })
-    }
-
-}
